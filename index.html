@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays and Strings</title>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example1.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example2.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example3.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example4.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example5.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example6.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example7.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example8.js"></script>
+    <script type="text/javascript" src="./ArraysAndStrings/example9.js"></script>
+</head>
+
+<body>
+    <script>
+        let execute = 'MOD';
+        switch (execute) {
+            case 'MOD':
+                ////Finding Mod
+                findingMod(1, 20);
+                document.write("<br>");
+                break;
+            case 'FACTORIAL':
+                ////Finding Factorial
+                var res = factorial(4);
+                document.write(res);
+                document.write("<br>");
+                break;
+            case 'PERMUTATIONS':
+                ////Finding Permutations of string
+                var res = permutations("tact coa");
+                res.forEach(element => {
+                    document.write(element);
+                    document.write("<br>");
+                });
+                document.write(res.length);
+                document.write("<br>");
+                break;
+            case 'STRING_SORT':
+                //Sorting the string
+                var res = stringSort("namaste");
+                document.write(res);
+                break;
+            case 'PALINDROME':
+                ////Is the string Palindrome
+                var input = "aa aa";
+                if (isPalindrome(input)) //if it is true;
+                    document.write("TRUE: String is Palindrome");
+                else
+                    document.write("FALSE: String is not a Palindrome");
+                break;
+            case 'EXAMPLE_1':
+                ////Example 1 - String has unique character or not
+                var input = "alexa"
+                var result = isUniqueString(input);
+                if (!result)
+                    document.write("String does not has unique charaters");
+                else
+                    document.write("String has unique charaters");
+                break;
+            case 'EXAMPLE_2':
+                ////Example 2 - Finding permutaions of two strings
+                var input1 = "au";
+                var input2 = "auk"
+                var permutationExist = findPermutations(input1, input2);
+                if (permutationExist)
+                    document.write("TRUE: Permutation found");
+                else
+                    document.write("FALSE: Permutation does not found");
+                break;
+            case 'EXAMPLE_3':
+                ////Example 3 - URLify - Replacing all spaces woth '%20'
+                var input = 'This  string  has      some extra   spaces';
+                document.write(URLify(input));
+                break;
+            case 'EXAMPLE_4':
+                ////Example 4 - Palindrome Permutation - Check if the given string is a permutaion of palindrome
+                var input = "zalexo"
+                var result = isPalindromePermutation(input);
+                if (!result)
+                    document.write("FALSE: Palindrome Permutation does not found");
+                else
+                    document.write("TRUE: Palindrome Permutation found");
+                break;
+            case 'EXAMPLE_5':
+                ////Example 5 - One Way- Check if the given two strings are one way edit
+                ////(insertion / removal / replace)  to each other
+                var input1 = "pales";
+                var input2 = "pale";
+                var result = isOneWayEditAction(input1, input2);
+                if (!result)
+                    document.write("FALSE: Strings are not One way edit to each other");
+                else
+                    document.write("TRUE: Strings are One way edit to each other");
+                break;
+            case 'EXAMPLE_6':
+                ////Example 6 - String Compression - Check if the given string can be compresses. 
+                ////For ex., aaabbcc to a3b2c2. if not return original string.
+                var input = "aaabbcc";
+                var result = isStringCompressed(input.toLocaleLowerCase());
+                document.write("Output string: " + result);
+                break;
+            case 'EXAMPLE_7':
+                ////Example 7 - Rotate Matrix - Rotate N * N matrix by 90 degree.
+                var inputMatrix = [
+                    [1, 2, 3],
+                    [4, 5, 6],
+                    [7, 8, 9]
+                ]
+
+                var outputMatrix = '';
+
+                for (let i = 0; i < inputMatrix.length; i++) {
+                    for (let j = 0; j < inputMatrix[i].length; j++) {
+                        outputMatrix += inputMatrix[i][j] + ' ';
+                    }
+                    document.write(outputMatrix + "<br />");
+                    outputMatrix = '';
+                }
+                document.write("<br />  The Output matrix is: <br/>");
+                outputMatrix = rotateMatrix(inputMatrix);
+                document.write(outputMatrix);
+                break;
+            case 'EXAMPLE_8':
+                ////Example 8 - Zero Matrix - If an element in the M * N matrix is zero 
+                ////then entrire row and column is set to zero.
+                var inputMatrix = [
+                    [1, 2, 3],
+                    [4, 0, 6],
+                    [7, 8, 9]
+                ]
+
+                document.write("<br />  The Input matrix is: <br/>");
+                document.write(displayMatrix(inputMatrix));
+
+                document.write("<br />  The Output matrix is: <br/>");
+                var matrix = zeroMatrix(inputMatrix);
+                document.write(displayMatrix(matrix));
+                break;
+            case 'EXAMPLE_9':
+                ////Example 9 - String Rotation - If one string is a rotation of another string.
+                var input1 = "zalexo";
+                var input2 = "aolzxe";
+                var result = isRotation(input1, input2);
+                if (!result)
+                    document.write("FALSE: String is not rotation of another");
+                else
+                    document.write("TRUE: String is rotation of another");
+                break;
+        }
+    </script>
+</body>
+</html>
