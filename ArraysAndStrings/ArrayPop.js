@@ -22,3 +22,4 @@ function findLength(array){
 
 const removedElement = Pop(['a', 'b', 'c', 'd']);
 console.log(removedElement);
+
